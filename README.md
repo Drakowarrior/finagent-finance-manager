@@ -20,4 +20,4 @@ LocalStorage (Data persistence)
 
 🌍 Live Project
 
-()
+(https://finagent-finance-manager.vercel.app/)
