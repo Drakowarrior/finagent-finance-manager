@@ -1,0 +1,253 @@
+/* src/components/Footer.css */
+
+.footer {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+  color: #E2E8F0;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated top border */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4F46E5, #06B6D4, #4F46E5);
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 5% 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.footer-logo-dot {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #4F46E5, #06B6D4);
+  border-radius: 50%;
+  margin-top: -8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.footer-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer Titles */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #4F46E5, #06B6D4);
+  border-radius: 2px;
+}
+
+/* Creator & Contact Info */
+.creator-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #A5B4FC;
+  margin-bottom: 0.75rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.contact-link:hover {
+  color: #4F46E5;
+  transform: translateX(5px);
+}
+
+.portfolio-link {
+  font-weight: 500;
+}
+
+.portfolio-link:hover {
+  color: #06B6D4;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #64748B;
+}
+
+.creator-credit {
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+.creator-name-link {
+  font-weight: 700;
+  background: linear-gradient(135deg, #4F46E5, #06B6D4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.creator-name-link:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .contact-link:hover {
+    transform: translateX(0) scale(1.05);
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 2rem 5%;
+  }
+
+  .footer-logo-text {
+    font-size: 1.5rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Heartbeat animation for creator name */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.creator-name-link:hover {
+  animation: heartbeat 0.5s ease;
+}

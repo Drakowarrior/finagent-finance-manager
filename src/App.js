@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Expenses from './pages/Expenses';
@@ -61,6 +62,7 @@ function App() {
         <main className="page-transition">
           {renderPage()}
         </main>
+        <Footer />
       </div>
     </FinanceProvider>
   );
