@@ -1,0 +1,255 @@
+/* src/components/SavingsInput.css */
+
+.savings-input-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.savings-input-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 24px;
+  padding: 1.8rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.savings-input-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.savings-input-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.savings-icon {
+  font-size: 2rem;
+  background: rgba(255,255,255,0.15);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
+
+.savings-input-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.savings-input-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.savings-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.savings-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.savings-amount .currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.edit-savings-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.edit-savings-btn:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.02);
+}
+
+.savings-edit-mode {
+  margin-bottom: 1.5rem;
+}
+
+.savings-input-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #667eea;
+  font-weight: 600;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.savings-number-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 14px;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+  color: #1E293B;
+}
+
+.savings-number-input:focus {
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.savings-edit-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancel-edit-btn,
+.save-savings-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.cancel-edit-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.cancel-edit-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.save-savings-btn {
+  background: white;
+  color: #667eea;
+}
+
+.save-savings-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.success-toast {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #10B981;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  animation: slideUp 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.savings-tip {
+  display: flex;
+  gap: 10px;
+  background: rgba(255,255,255,0.12);
+  padding: 12px 16px;
+  border-radius: 14px;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.tip-icon {
+  font-size: 1rem;
+}
+
+.tip-text {
+  flex: 1;
+  opacity: 0.9;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .savings-input-card {
+    padding: 1.2rem;
+  }
+  
+  .savings-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  
+  .savings-input-title {
+    font-size: 1rem;
+  }
+  
+  .savings-amount {
+    font-size: 1.2rem;
+  }
+  
+  .savings-amount .currency {
+    font-size: 1.2rem;
+  }
+  
+  .edit-savings-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .savings-number-input {
+    padding: 12px 12px 12px 40px;
+    font-size: 0.9rem;
+  }
+  
+  .currency-symbol {
+    font-size: 1rem;
+    left: 12px;
+  }
+}

@@ -1,0 +1,591 @@
+/* src/pages/Expenses.css */
+
+.expenses {
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.expenses-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1E293B, #4F46E5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.expenses-subtitle {
+  color: #64748B;
+  font-size: 0.9rem;
+}
+
+.add-expense-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #4F46E5, #06B6D4);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-expense-btn:hover {
+  transform: translateY(-2px);
+}
+
+.add-expense-btn span {
+  font-size: 1.2rem;
+}
+
+/* Statistics Cards */
+.expense-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card-mini {
+  background: white;
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.stat-card-mini:hover {
+  transform: translateY(-2px);
+}
+
+.stat-info-mini {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label-mini {
+  font-size: 0.7rem;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value-mini {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1E293B;
+}
+
+/* Filters Section */
+.filters-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #E2E8F0;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4F46E5;
+}
+
+.clear-search {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94A3B8;
+  font-size: 0.9rem;
+  padding: 4px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-select {
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  border: 2px solid #E2E8F0;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #4F46E5;
+}
+
+/* Category Filters */
+.category-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.category-chip {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #475569;
+}
+
+.category-chip:hover {
+  border-color: #4F46E5;
+  transform: translateY(-2px);
+}
+
+.category-chip.active {
+  background: #4F46E5;
+  border-color: #4F46E5;
+  color: white;
+}
+
+/* Category Summary */
+.category-summary {
+  background: #F8FAFC;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #E2E8F0;
+}
+
+.category-summary h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #1E293B;
+}
+
+.summary-item {
+  margin-bottom: 1rem;
+}
+
+.summary-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  color: #475569;
+}
+
+.summary-bar-bg {
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.summary-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* Expenses List */
+.expenses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expense-card {
+  background: white;
+  border-radius: 18px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.expense-card:hover {
+  transform: translateX(5px);
+}
+
+.expense-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.category-badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.expense-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1E293B;
+}
+
+.expense-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.expense-category {
+  font-weight: 500;
+}
+
+.expense-date {
+  color: #94A3B8;
+}
+
+.expense-note {
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.expense-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.expense-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #EF4444;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.expense-card:hover .edit-btn,
+.expense-card:hover .delete-btn {
+  opacity: 1;
+}
+
+.edit-btn:hover {
+  background: #E0E7FF;
+  transform: scale(1.1);
+}
+
+.delete-btn:hover {
+  color: #EF4444;
+  background: #FEE2E2;
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 28px;
+  padding: 1.8rem;
+  width: 90%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  color: #1E293B;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #94A3B8;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #EF4444;
+  transform: scale(1.1);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* FIXED: Amount input wrapper - no overlap */
+.amount-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 14px;
+  color: #64748B;
+  font-weight: 500;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.amount-input-wrapper input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 28px !important;
+  border: 2px solid #E2E8F0;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-sizing: border-box;
+}
+
+.amount-input-wrapper input:focus {
+  outline: none;
+  border-color: #4F46E5;
+}
+
+/* Remove spinner buttons on number input */
+.amount-input-wrapper input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.amount-input-wrapper input[type="number"]::-webkit-inner-spin-button,
+.amount-input-wrapper input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #E2E8F0;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4F46E5;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #4F46E5, #06B6D4);
+  color: white;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #F1F5F9;
+  color: #64748B;
+}
+
+.cancel-btn:hover {
+  background: #E2E8F0;
+}
+
+/* Empty State */
+.empty-state-expenses {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #E2E8F0;
+}
+
+.empty-state-expenses h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1E293B;
+}
+
+.empty-state-expenses p {
+  color: #64748B;
+  margin-bottom: 1.5rem;
+}
+
+.add-first-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #4F46E5, #06B6D4);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .expenses {
+    padding: 1rem;
+  }
+  
+  .expenses-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filters-section {
+    flex-direction: column;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .filter-select {
+    flex: 1;
+  }
+  
+  .category-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+  }
+  
+  .expense-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .expense-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

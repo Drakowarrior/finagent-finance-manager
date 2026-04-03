@@ -1,0 +1,319 @@
+/* src/pages/About.css */
+
+.about {
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1E293B, #4F46E5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  color: #64748B;
+  font-size: 1.1rem;
+}
+
+/* Grid Layout for Mission & Vision */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.about-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  border-color: #4F46E5;
+}
+
+.about-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #4F46E5, #06B6D4);
+  border-radius: 3px;
+}
+
+.about-card p {
+  color: #475569;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Features Section */
+.features-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1E293B;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card-about {
+  background: white;
+  border-radius: 20px;
+  padding: 1.8rem;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.feature-card-about:hover {
+  transform: translateY(-4px);
+  border-color: #4F46E5;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+}
+
+.feature-icon-about {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card-about h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card-about p {
+  color: #64748B;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Stats Section */
+.stats-section-about {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-item-about {
+  background: linear-gradient(135deg, #F8FAFC, #FFFFFF);
+  border-radius: 20px;
+  padding: 1.8rem;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.stat-item-about:hover {
+  transform: translateY(-4px);
+  border-color: #4F46E5;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4F46E5;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+/* Tech Section */
+.tech-section {
+  margin-bottom: 3rem;
+}
+
+.tech-stack-about {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.tech-item {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px);
+  border-color: #4F46E5;
+  background: linear-gradient(135deg, #FFFFFF, #F8FAFC);
+}
+
+.tech-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 0.25rem;
+}
+
+.tech-desc {
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
+
+/* Commitment Section */
+.commitment-section {
+  background: linear-gradient(135deg, #E0E7FF, #CFFAFE);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.commitment-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 1rem;
+}
+
+.commitment-section p {
+  color: #475569;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .stats-section-about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-stack-about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 1rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1rem;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-section-about {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .tech-stack-about {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .commitment-section {
+    padding: 1.5rem;
+  }
+  
+  .commitment-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-section-about {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-card {
+    padding: 1.5rem;
+  }
+  
+  .feature-card-about {
+    padding: 1.2rem;
+  }
+  
+  .stat-item-about {
+    padding: 1.2rem;
+  }
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles */
+.about-card:focus,
+.feature-card-about:focus,
+.tech-item:focus,
+.stat-item-about:focus {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(79, 70, 229, 0.2);
+  color: #4F46E5;
+}
